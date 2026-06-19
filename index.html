@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>球探体育 · 简明导航指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f4f6f9;
+            color: #1e2a3a;
+            line-height: 1.6;
+            padding: 0 16px;
+        }
+
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        /* 顶部导航 */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 18px 0 12px;
+            border-bottom: 1px solid #e2e7ed;
+            margin-bottom: 32px;
+        }
+
+        .logo {
+            font-weight: 600;
+            font-size: 1.4rem;
+            letter-spacing: 0.5px;
+            color: #1e2a3a;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: #3c4b5e;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 450;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.15s;
+        }
+
+        .nav-links a:hover {
+            border-bottom-color: #2c7a7b;
+        }
+
+        /* hero 区 */
+        .hero {
+            padding: 40px 0 32px;
+            max-width: 820px;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            color: #0d1b2a;
+        }
+
+        .hero p {
+            font-size: 1.08rem;
+            color: #2c3e50;
+            max-width: 680px;
+            margin-bottom: 28px;
+        }
+
+        .hero a {
+            display: inline-block;
+            background-color: #1f3a4b;
+            color: white;
+            font-weight: 500;
+            padding: 10px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 0.98rem;
+            transition: background 0.2s;
+        }
+
+        .hero a:hover {
+            background-color: #2b5a6f;
+        }
+
+        /* 场景模块 —— 三张卡片 */
+        .scene-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin: 40px 0 36px;
+        }
+
+        .scene-card {
+            background: white;
+            border-radius: 16px;
+            padding: 28px 22px 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e6eaef;
+            transition: box-shadow 0.2s, border-color 0.2s;
+        }
+
+        .scene-card:hover {
+            box-shadow: 0 8px 20px rgba(0, 20, 30, 0.06);
+            border-color: #ccd4dd;
+        }
+
+        .scene-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #1d2b3b;
+        }
+
+        .scene-card p {
+            font-size: 0.95rem;
+            color: #3a4a5c;
+            margin-bottom: 14px;
+        }
+
+        .scene-card .card-link {
+            color: #1f4a5f;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 1px dashed #9bb7c9;
+            padding-bottom: 1px;
+            font-size: 0.92rem;
+        }
+
+        .scene-card .card-link:hover {
+            color: #0b303f;
+            border-bottom-style: solid;
+        }
+
+        /* 常见说明 + 提示 */
+        .faq-section {
+            background: white;
+            border-radius: 20px;
+            padding: 32px 30px 28px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+            margin: 32px 0 48px;
+        }
+
+        .faq-section h2 {
+            font-size: 1.5rem;
+            font-weight: 550;
+            color: #132433;
+            margin-bottom: 20px;
+            border-left: 4px solid #2d6a7b;
+            padding-left: 16px;
+        }
+
+        .faq-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            padding: 14px 0;
+            border-bottom: 1px solid #edf2f7;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item strong {
+            font-weight: 600;
+            color: #1f3c4a;
+            font-size: 1rem;
+        }
+
+        .faq-item p {
+            color: #2f4055;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .faq-item .inline-link {
+            color: #1f5a6b;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .faq-item .inline-link:hover {
+            color: #083545;
+        }
+
+        .reminder-box {
+            margin-top: 24px;
+            background: #eef3f8;
+            border-radius: 14px;
+            padding: 18px 22px;
+            border-left: 4px solid #3a7a8a;
+        }
+
+        .reminder-box p {
+            font-size: 0.95rem;
+            color: #1d3142;
+        }
+
+        /* footer */
+        .footer {
+            text-align: center;
+            padding: 28px 0 32px;
+            border-top: 1px solid #dfe5ec;
+            margin-top: 24px;
+            color: #4f6278;
+            font-size: 0.88rem;
+        }
+
+        .footer a {
+            color: #1f4a5f;
+            text-decoration: none;
+            font-weight: 450;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .nav-links {
+                gap: 24px 20px;
+            }
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .faq-section {
+                padding: 24px 18px 22px;
+            }
+        }
+
+        @media (max-width: 440px) {
+            .scene-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero a {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 顶部导航 -->
+    <nav class="navbar">
+        <a href="https://cn-sportsscout.com" class="logo">球探体育</a>
+        <div class="nav-links">
+            <a href="#">首页</a>
+            <a href="#">赛事指南</a>
+            <a href="#">常见问题</a>
+            <a href="#">提醒</a>
+        </div>
+    </nav>
+
+    <!-- hero 介绍区 -->
+    <div class="hero">
+        <h1>从入门到习惯，<br>一份轻量的使用指南</h1>
+        <p>
+            无论你是刚开始了解体育数据，还是想更顺畅地获取信息，<a href="https://cn-sportsscout.com" style="color: #1f4a5f; text-decoration: underline; background: none; padding: 0; border-radius: 0;">球探体育</a>这个工具都能帮你把零散的数据串起来。
+            下面几个场景覆盖了多数人的日常使用方式，花两分钟看一看，能省下不少摸索的时间。
+        </p>
+        <a href="https://cn-sportsscout.com">球探体育</a>
+    </div>
+
+    <!-- 三个场景模块 -->
+    <div class="scene-grid">
+        <div class="scene-card">
+            <h3>📊 快速查赛事</h3>
+            <p>比赛日打开页面，扫一眼就能看到比分、时间线和关键变动。不需要反复刷新，数据更新节奏比较友好。</p>
+            <a href="https://cn-sportsscout.com" class="card-link">球探体育</a>
+        </div>
+        <div class="scene-card">
+            <h3>📋 队伍与球员</h3>
+            <p>想了解某个队伍近期的表现，或者某个球员的出场时间、进球分布？列表清晰，点击就能展开更多维度的信息。</p>
+            <a href="https://cn-sportsscout.com" class="card-link">球探体育</a>
+        </div>
+        <div class="scene-card">
+            <h3>🔔 关注与提醒</h3>
+            <p>把关注的联赛或队伍加入列表，页面会帮你聚合相关内容。不用再在各个页面之间来回跳转，省心不少。</p>
+            <a href="https://cn-sportsscout.com" class="card-link">球探体育</a>
+        </div>
+    </div>
+
+    <!-- 常见说明 + FAQ 摘要 -->
+    <div class="faq-section">
+        <h2>常见说明 · 访问提醒</h2>
+
+        <div class="faq-item">
+            <strong>需要注册或登录吗？</strong>
+            <p>大部分内容无需登录即可浏览。部分个性化功能（比如关注列表）建议注册后使用，数据会存在你的账户中。</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>页面加载慢或打不开？</strong>
+            <p>偶尔会因为网络波动或维护出现短暂延迟。可以先刷新页面，或者过几分钟再试。如果持续无法访问，可以检查一下本地网络环境。</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>数据来源可靠吗？</strong>
+            <p>平台整合了公开的赛事统计信息，并做了交叉核对，但所有数据仅供参考，不构成任何投注或决策建议。请以官方发布为准。</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>移动端体验怎么样？</strong>
+            <p>页面针对手机浏览器做了布局适配，横竖屏都可以正常操作。如果觉得字体太小，可以在浏览器设置里调整。</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>怎么最快找到想要的比赛？</strong>
+            <p>首页顶部有快捷筛选栏，按联赛、日期或队伍名称过滤。你也可以直接使用搜索功能。如果还是找不到，可能是该赛事暂未收录。</p>
+        </div>
+
+        <div class="reminder-box">
+            <p><strong>📌 访问提醒：</strong> 使用 <a href="https://cn-sportsscout.com" class="inline-link">球探体育</a> 时，建议保持浏览器为较新版本，部分老旧内核可能导致样式错乱。
+            另外，公共网络下注意个人信息安全，不要在不受信任的设备上保存密码。如果你遇到任何显示异常或内容疑问，建议先查看帮助页面或联系客服反馈。</p>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+        <p>导航参考 · 简明指南 &mdash; 更多信息请访问 <a href="https://cn-sportsscout.com">球探体育</a></p>
+        <p style="margin-top: 8px; color: #6c7f96;">页面仅供介绍，实际功能以站点为准。</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
